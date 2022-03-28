@@ -1,0 +1,11 @@
+int pin = A1;
+
+void setup() {
+  pinMode(pin, INPUT);
+}
+
+void loop() {
+  String temp = String (analogRead(pin));
+  Particle.publish("temp", temp, PRIVATE);
+  delay(30000);             
+}
